@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS school CHARACTER SET utf8mb4;USE school;
+CREATE TABLE news(id INT AUTO_INCREMENT PRIMARY KEY,title VARCHAR(160),body TEXT,icon VARCHAR(8),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE events(id INT AUTO_INCREMENT PRIMARY KEY,title VARCHAR(160),start_date VARCHAR(20),time_text VARCHAR(40));
+CREATE TABLE staff(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100),role VARCHAR(100),email VARCHAR(120));
+CREATE TABLE gallery(id INT AUTO_INCREMENT PRIMARY KEY,caption VARCHAR(120),icon VARCHAR(8));
+CREATE TABLE messages(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(100),email VARCHAR(120),subject VARCHAR(160),message TEXT,created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE registrations(id INT AUTO_INCREMENT PRIMARY KEY,parent VARCHAR(100),email VARCHAR(120),student VARCHAR(100),grade VARCHAR(10),created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+INSERT INTO news(title,body,icon)VALUES('Birthday Salute','Order your child''s birthday package.','🎂'),('School Hours & Drop-Off','Office 7:45am–3:30pm. School 7:45am–2:45pm.','🚌'),('Right At School','Sign up for afterschool care.','🎒');
+INSERT INTO events(title,start_date,time_text)VALUES('American Education Week','Nov 18','All day'),('Robotics Club','Nov 19','3:15–4:30 PM'),('Thanksgiving Break – No School','Nov 23','All week');
+INSERT INTO staff(name,role,email)VALUES('Jane Carter','Principal','jcarter@example.edu'),('Mark Lewis','Assistant Principal','mlewis@example.edu'),('Sara Nguyen','Counselor','snguyen@example.edu');
+INSERT INTO gallery(caption,icon)VALUES('Spirit Day','🎉'),('Robotics Club','🤖'),('Library Time','📚'),('Field Day','🏃'),('Art Show','🎨'),('Science Fair','🔬');
